@@ -1,0 +1,1 @@
+Icons are used for the tool buttons, videos are instructional.
