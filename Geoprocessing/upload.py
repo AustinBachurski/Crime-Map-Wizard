@@ -58,9 +58,9 @@ def upload_data():
     signing_in_message = "Signing in to ArcGIS Online..."
     threading.Thread(target=lambda: start_spinning(signing_in_message)).start()
     try:  # Signing in to ArcGIS Online.
-        arcpy.SignInToPortal("https://www.arcgis.com/",
-                             os.getenv("AGOL_USERNAME"),
-                             os.getenv("AGOL_PASSWORD"))
+        login = arcpy.SignInToPortal("https://www.arcgis.com/",
+                                     os.getenv("AGOL_USERNAME"),
+                                     os.getenv("AGOL_PASSWORD"))
     except ValueError as error:
         stop_spinning()
         if DEBUG:
@@ -72,7 +72,16 @@ def upload_data():
         sys.exit(1)
     else:
         stop_spinning()
-        print(f"\r{signing_in_message}success.", flush=True)
+        if login["expires"] > 0:
+            print(f"\r{signing_in_message}success.", flush=True)
+        else:
+            if DEBUG:
+                input("\n\nERROR: Failed to sign in to ArcGIS Online.\n"
+                      "\nError received: No security token received!\n\n"
+                      "Please inform Austin Bachurski of the error, his contact info\n"
+                      "can be found by clicking 'Help' in the main window.\n\n"
+                      "Press 'enter' to close this window.")
+            sys.exit(1)
 
     table_to_point_message = "Converting CSV information to GIS points..."
     threading.Thread(target=lambda: start_spinning(table_to_point_message)).start()
