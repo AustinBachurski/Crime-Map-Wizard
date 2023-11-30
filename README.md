@@ -1,7 +1,7 @@
 # Crime-Map-Wizard
 This tool was written to help the volunteers at the Kalispell Police Department update the Kalispell Crime Heatmap quickly and easily, no more copy/pasting in Excel, and no need to open ArcGIS Pro.
 
-Crime Map Wizard is a newer version of the Crime Map Update Assistant that provides a graphical wizard with the previous tree geoprocessing scripts improved and condensed into a single script.  The user interface is written in C++ using wxWidgets, and the geoprocessing script is written in Python using the ArcGIS ArcPy module.
+Crime Map Wizard is a newer version of the Crime Map Update Assistant that provides a graphical wizard with the previous three geoprocessing scripts improved and condensed into a single script.  The user interface is written in C++ using wxWidgets, and the geoprocessing script is written in Python using the ArcGIS ArcPy module.
 
 ## Image Gallery
 
@@ -15,7 +15,7 @@ Crime Map Wizard is a newer version of the Crime Map Update Assistant that provi
 
 ### OpenXLSX
 
-&nbsp;&nbsp;&nbsp;&nbsp;*OpenXLSX is a C++ library for reading, writing, creating and modifying Microsoft Excel® files, with the .xlsx format.*
+&nbsp;&nbsp;&nbsp;&nbsp;*OpenXLSX is a C++ library for reading, writing, creating, and modifying Microsoft Excel® files, with the .xlsx format.*
 * [OpenXLSX GitHub Repository](https://github.com/troldal/OpenXLSX)
 
 ### wxWidgets
